@@ -1,0 +1,10 @@
+# install packages befor live 
+check_npm_install =`ssh -l $destination_user $destination_host "cd $pre_prod_dir;npm i"
+# Run on Dev Enviorment befor live
+check_npm_run =`ssh -l $destination_user $destination_host "cd $;npm run dev"
+# moving Files from pre_prod to preprod cluster
+ check_move_preprod =`ssh -l $destination_user $destination_host "mv $pre_prod_dir ${destination_dir}_${current_remote_commit}
+
+
+
+
