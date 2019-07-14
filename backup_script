@@ -1,0 +1,20 @@
+filename="${p:Appname}.${p:Extension}"
+Warfilepath=${p:UploadFolder}
+backupdirsource=${p:UploadFolder}/$filename
+backupdirdest=${p:component/Backup}
+cd$Warfilepath
+if [[-f "$filename" ]];
+then
+echo "File $filename exists"
+cp -R "$backupdirsource" "$backupdirdest/"$filename"_$(date +"%d_%m_%Y_%H_%M_%S")"
+else
+echo "File $filename does not exist"
+fi
+cofigfilepath =${ConfigFilePath}
+cd configfilepath
+if[[ -f "config.xml"]];
+then "File config.xml exists"
+cp -R "config.xml" "cofig.xml_$(date +"%d_%m_%Y_%H_%M_%S")"
+else 
+echo "File config.xml does not exists"
+fi
